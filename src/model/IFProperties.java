@@ -7,6 +7,11 @@ public class IFProperties
 	 * Initializes all variables
 	 */
 
+	/**
+	 * String name will ask for a name, double distance will ask about travel,
+	 * boolean decision will ask about
+	 */
+
 	private String name;
 	private double distance;
 	private boolean decision;
@@ -22,6 +27,7 @@ public class IFProperties
 		this.timeMinutes = timeMinutes;
 	}
 
+	//Setter and Getters created below.
 	public String getName()
 	{
 		return name;
