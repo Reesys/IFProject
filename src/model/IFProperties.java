@@ -18,6 +18,11 @@ public class IFProperties
 	private int timeHours;
 	private int timeMinutes;
 
+	public IFProperties()
+	{
+
+	}
+
 	public IFProperties(String name, double distance, boolean decision, int timeHours, int timeMinutes)
 	{
 		this.name = name;

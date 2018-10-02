@@ -2,28 +2,28 @@ package controller;
 
 import javax.swing.JOptionPane;
 
+import model.IFProperties;
+
 public class IFController
 {
 
-	private IFController myProperties;
-	private IFController userProperties;
-	private IFController loopy;
+	private IFProperties userProperties;
+	//private IFController loopy;
 
 	/**
 	 * Builds the instance of the Controller.
 	 */
 
-	/**public void IFProperties()
+	public IFController()
 	{
-		myProperties = new IFProperties();
 		userProperties = new IFProperties();
-
-	}*/
+	}
 
 	public void start()
 	{
 		bigGame();
 		loopy();
+		loops();
 	}
 
 	/**
@@ -33,13 +33,39 @@ public class IFController
 
 	public void bigGame()
 	{
+		JOptionPane.showMessageDialog(null, userProperties);
 
+		System.out.println(userProperties);
+
+		String userInput = JOptionPane.showInputDialog("How many hours did you run?");
+		int timeHours = -99;
+		if(validInt(userInput))
+		{
+			timeHours = Integer.parseInt(userInput);
+		}
+		JOptionPane.showMessageDialog(null, "You said you ran " + timeHours);
+
+		userInput = JOptionPane.showInputDialog("How many minutes did you run?");
+		int timeMinutes = -99;
+		if(validInt(userInput))
+		{
+			timeMinutes = Integer.parseInt(userInput);
+		}
+		JOptionPane.showMessageDialog(null, "You said you ran " + timeMinutes);
+
+		userInput = JOptionPane.showInputDialog("How far did you run?");
+		int distance = -99;
+		if(validInt(userInput))
+		{
+			distance = Integer.parseInt(userInput);
+		}
+		JOptionPane.showMessageDialog(null, "You far did you run " + distance);
 	}
 
 	private void loopy()
 	{
 		//define a variable before the loop
-		boolean isFinished = false;
+		/*boolean isFinished = false;
 		int someCount = 0;
 
 		//test the code
@@ -47,7 +73,7 @@ public class IFController
 		{
 			IFController joshRuns = new IFController();
 			//do code
-			JOptionPane.showMessageDialog(null, "hola senir");
+			JOptionPane.showMessageDialog(null, "dgggd");
 
 			someCount++;
 			someCount += 1;
@@ -64,9 +90,33 @@ public class IFController
 		String response = JOptionPane.showInputDialog(null, "Did you go fast?");
 		while(!validDouble(response))
 		{
-			response = JOptionPane.showInputDialog(null, "Nuh uh.");
+			response = JOptionPane.showInputDialog(null, "o-o");
 		}
-		joshRuns.setDistance(Double.parseDouble(response));
+		//joshRuns.setDistance(Double.parseDouble(response));
+
+		for (int index = 0; index < 10; index++)
+		{
+			JOptionPane.showMessageDialog(null, "This is execution number " + index);
+		}
+		JOptionPane.showMessageDialog(null, "This is execution number " + response);*/
+	}
+
+
+	/**********************
+	 * This "loops()" method is a for loop
+	 * that is going to count down from any
+	 * integer by minus 1 from that number.
+	 * Until it has counted by 10 and closes.
+	 **********************/
+	private void loops()
+	{
+		String numOne = JOptionPane.showInputDialog(null, "Enter in a number: ");
+		int num = Integer.parseInt(numOne);
+
+		for(int newNum = Integer.valueOf(numOne); newNum > num-10; newNum-=1)
+		{
+			JOptionPane.showMessageDialog(null, "Counting backwards " + newNum);
+		}
 	}
 
 	public boolean validInt(String maybeInt)
